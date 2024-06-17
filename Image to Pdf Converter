@@ -1,0 +1,9 @@
+from PIL import Image
+path=input("Enter the path of image:")
+i=Image.open(path)
+if i.mode=="RGBA":
+    p=Image.new('RGB',i.size,(255,255,255))
+    p.path(i,mask=i.split()[3])
+    p.save(r'F:\pngtopdf.pdf',"PDF",resoltion=100)
+else:
+    i.save(r'F:\jpgtopdf.pdf',"PDF",resolution=100)
